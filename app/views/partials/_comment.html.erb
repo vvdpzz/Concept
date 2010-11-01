@@ -1,0 +1,13 @@
+<div id="comments_<%= someone.class.name %>_<%= someone.id %>" class="comments">
+	<%= render :partial => "comments/show_comment", :collection => someone.comments %>
+</div>
+<div id="form_for_comment_<%= someone.class.name %>_<%= someone.id %>" class="form_for_comment" style="display:none">
+	<%= render :partial => "comments/comment", :locals => {:commentable => someone.class.name, :id => someone.id} %>
+</div>
+<div id="button_to_comment_<%= someone.class.name %>_<%= someone.id %>" class="button_to_comment">
+	<% if someone.class.name == "Question" %>
+		<%= link_to 'Reply', new_question_comment_path(someone), :remote => true, :class => 'link_submit' %>
+	<% else %>
+		<%= link_to 'Reply', new_question_answer_comment_path(someone.question,someone), :remote => true, :class => 'link_submit' %>
+	<% end %>
+</div>

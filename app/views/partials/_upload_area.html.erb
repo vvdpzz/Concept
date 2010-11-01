@@ -1,0 +1,13 @@
+<div id="upload_area">
+	<h3>Uploaded</h3>
+	<% current_user.photos.temphotos.each do |photo| %>
+		<div class="uploaded_image" id="<%= photo.id %>">
+			<div class="image_self">
+				<%= image_tag photo.item.url(:thumb), :id => photo.id %>
+			</div>
+			<div class="image_ops">
+				<%= link_to 'remove', photo, :method => :delete, :remote => true %>
+			</div>
+		</div>
+	<% end -%>
+</div>

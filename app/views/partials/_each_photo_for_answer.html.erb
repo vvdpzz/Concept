@@ -1,0 +1,10 @@
+<% someone.photos.each do |photo| %>
+	<%= div_for photo do %>
+		<%= render 'partials/vote', :someone => someone %>
+		<%= image_tag photo.item.url(:large) %>
+		<div class='photo_body' id='<%= photo.id %>'>
+			<%= render :partial => '/partials/show_photo_body', :locals => {:photo => photo} %>
+			<%= render :partial => '/partials/add_photo_body', :locals => {:photo => photo} %>
+		</div>
+	<% end -%>
+<% end -%>

@@ -1,0 +1,6 @@
+<div class="add_photo_body_form" style="display:none">
+	<%= form_for(photo, :remote => true) do |f| %>
+		<%= f.text_area :body, :class => "add_photo_body" %>
+		<%= f.submit 'Post', :class => 'small_submit' %>
+	<% end -%>
+</div>

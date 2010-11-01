@@ -1,0 +1,32 @@
+<%= render 'question' %>
+<div class="poof"></div>
+<div class="section">
+	<h2>已上传的图片</h2>
+</div>
+<div id="upload_images" class="image">
+	<% @question.photos.each do |photo| %>
+			<div class="uploaded_image" id="<%= photo.id %>">
+				<div class="image_self">
+					<%= image_tag photo.item.url(:thumb), :id => photo.id %>
+				</div>
+				<div class="image_ops">
+					<%= link_to '删除', photo, :method => :delete, :remote => true, :class => 'deleteme' %>
+				</div>
+			</div>
+	<% end -%>
+	<div class="section">
+		<h2>新上传的图片</h2>
+	</div>
+	<% current_user.photos.temphotos.each do |photo| %>
+			<div class="uploaded_image" id="<%= photo.id %>">
+				<div class="image_self">
+					<%= image_tag photo.item.url(:thumb), :id => photo.id %>
+				</div>
+				<div class="image_ops">
+					<%= link_to '删除', photo, :method => :delete, :remote => true %>
+				</div>
+			</div>
+	<% end -%>
+</div>
+<%= link_to 'Show', @question %> |
+<%= link_to 'Back', questions_path %>

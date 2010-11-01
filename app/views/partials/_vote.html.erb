@@ -1,0 +1,5 @@
+<div class='vote_area'>
+	<%= link_to '+', {:controller => :votes, :action => :vote_up, :voteable => someone.class.name, :id => someone.id}, :remote => true, :class => 'link_submit' %>
+	<div class='vote_number' id="vote_<%= someone.class.name %>_<%= someone.id %>"><%= someone.voted %></div>
+	<%= link_to '-', {:controller => :votes, :action => :vote_down, :voteable => someone.class.name, :id => someone.id}, :remote => true, :class => 'link_submit' %>
+</div>

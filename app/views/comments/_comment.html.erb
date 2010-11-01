@@ -1,0 +1,6 @@
+<%=form_tag({:controller => 'comments', :action => 'create'}, :remote => true, :id => 'new_comment') do %>
+	<%= hidden_field_tag :commentable, commentable %>
+	<%= hidden_field_tag :id, id %>
+	<%= text_area_tag :body, {}, :class => 'comment_area' %>
+	<%= submit_tag 'Reply', :class => 'small_submit' %>
+<% end %>

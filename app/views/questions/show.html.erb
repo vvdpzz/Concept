@@ -1,0 +1,32 @@
+<div id='entry'>
+	<div class='status'>
+		<div class='username'><%= @question.user.name %></div>
+		<div class='postime'><%= time_ago_in_words @question.created_at %></div>
+	</div>
+	<div class='post'>
+		<%= @question.body %>
+	</div>
+</div>
+<div id='view'>
+	<div id='photo_thumbs'>
+		<% @question.photos.each do |photo| %>
+			<%= image_tag photo.item.url(:square) %>
+		<% end -%>
+		<% @question.answers.each do |answer| %>
+			<% answer.photos.each do |photo| %>
+				<%= image_tag photo.item.url(:square) %>			
+			<% end -%>
+		<% end -%>
+	</div>
+	<div id='preview'>
+		<% photo = Photo.find(33) %>
+		<%= image_tag photo.item.url(:large) %>
+		<div class='photo_body' id='<%= photo.id %>'>
+			<%= render :partial => '/partials/show_photo_body', :locals => {:photo => photo} %>
+			<%= render :partial => '/partials/add_photo_body', :locals => {:photo => photo} %>
+		</div>
+	</div>
+	<div id='reply'>
+		<%= render 'partials/comment', :someone => @question %>
+	</div>
+</div>

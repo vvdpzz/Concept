@@ -1,0 +1,4 @@
+$('#comments_<%= @someone.class.name %>_<%= @someone.id %>').append("<%= escape_javascript(render :partial => 'comments/show_comment', :object => @comment) %>");
+$('#new_comment')[0].reset();
+$('#form_for_comment_<%= @someone.class.name %>_<%= @someone.id %>').slideUp();
+$('#button_to_comment_<%= @someone.class.name %>_<%= @someone.id %>').show();
