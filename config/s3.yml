@@ -9,6 +9,6 @@ test:
   secret_access_key: <your key>
 
 production:
-  bucket: myapp
-  access_key_id: <your key>
-  secret_access_key: <your key>
+  bucket: concept_development
+  access_key_id: AKIAJEXXGZVPEOFGFK5A
+  secret_access_key: FuGAESxEkiNpzyozzTJCAbyHsvOaPwCmjAhhLkxZ

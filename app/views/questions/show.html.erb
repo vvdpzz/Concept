@@ -19,7 +19,7 @@
 		<% end -%>
 	</div>
 	<div id='preview'>
-		<% photo = Photo.find(33) %>
+		<% photo = @question.photos.first %>
 		<%= image_tag photo.item.url(:large) %>
 		<div class='photo_body' id='<%= photo.id %>'>
 			<%= render :partial => '/partials/show_photo_body', :locals => {:photo => photo} %>

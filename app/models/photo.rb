@@ -5,8 +5,9 @@ class Photo < ActiveRecord::Base
   belongs_to :answer
   scope :temphotos, lambda { where(["photoable_id = 0"]) }
   has_attached_file :item,
-                    :path => ":rails_root/public/delicious/:id_:style.:extension",
-                    :url => "/delicious/:id_:style.:extension",
+                    :storage => :s3,
+                    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                    :path => "/delicious/:id_:style.:extension",
                     :dependent => :destroy,
                     :styles => {
                       :square   => "75x75#",

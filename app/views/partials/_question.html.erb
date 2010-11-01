@@ -7,7 +7,7 @@
 		<%= link_to truncate(question.body, :length => 140), question %>
 	</div>
 	<div class='thumbs'>
-		<% question.photos.limit(4).each do |photo| %>
+		<% question.photos.limit(8).each do |photo| %>
 			<%= image_tag photo.item.url(:square) %>
 		<% end -%>
 		<% question.answers.limit(4).each do |answer| %>
