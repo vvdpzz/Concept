@@ -3,7 +3,7 @@ class Photo < ActiveRecord::Base
   belongs_to :user
   belongs_to :question
   belongs_to :answer
-  scope :temphotos, lambda { where(["photoable_id = 0"]) }
+  scope :temphotos, lambda { where(["photoable_id IS NULL"]) }
   has_attached_file :item,
                     :storage => :s3,
                     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",

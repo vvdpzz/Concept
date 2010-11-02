@@ -2,7 +2,7 @@ class CreatePhotos < ActiveRecord::Migration
   def self.up
     create_table :photos do |t|
       t.references :user
-      t.integer :photoable_id, :default => 0
+      t.integer :photoable_id
       t.string :photoable_type
 
       t.timestamps
