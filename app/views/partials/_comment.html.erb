@@ -8,6 +8,6 @@
 	<% if someone.class.name == "Question" %>
 		<%= link_to 'Reply', new_question_comment_path(someone), :remote => true, :class => 'link_submit' %>
 	<% else %>
-		<%= link_to 'Reply', new_question_answer_comment_path(someone.question,someone), :remote => true, :class => 'link_submit' %>
+		<%= link_to 'Reply', new_photo_comment_path(someone), :remote => true, :class => 'link_submit' %>
 	<% end %>
 </div>

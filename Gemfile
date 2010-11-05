@@ -4,7 +4,7 @@ gem 'rails', '3.0.1'
 
 gem 'mysql2'
 
-gem 'aws-s3'
+gem 'aws-s3', :require => 'aws/s3'
 
 gem 'paperclip'
 
@@ -35,7 +35,6 @@ gem 'rails3-jquery-autocomplete', :git => 'git://github.com/vvdpzz/rails3-jquery
 # gem 'bj'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators

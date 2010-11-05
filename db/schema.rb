@@ -12,17 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 20101025152901) do
 
-  create_table "answers", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "question_id"
-    t.integer  "voted",       :default => 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
-  add_index "answers", ["user_id"], :name => "index_answers_on_user_id"
-
   create_table "comments", :force => true do |t|
     t.text     "body"
     t.integer  "commentable_id"
@@ -38,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20101025152901) do
 
   create_table "photos", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "photoable_id",      :default => 0
+    t.integer  "photoable_id"
     t.string   "photoable_type"
     t.datetime "created_at"
     t.datetime "updated_at"

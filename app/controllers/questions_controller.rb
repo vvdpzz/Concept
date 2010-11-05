@@ -11,10 +11,6 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.js  { render :json => @question.photos.find(:all,:select=>'id').map(&:id).to_json }
-    end
   end
   
   def new

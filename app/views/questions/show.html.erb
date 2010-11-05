@@ -10,23 +10,9 @@
 <div id='view'>
 	<div id='photo_thumbs'>
 		<% @question.photos.each do |photo| %>
-			<%= image_tag photo.item.url(:square) %>
-		<% end -%>
-		<% @question.answers.each do |answer| %>
-			<% answer.photos.each do |photo| %>
-				<%= image_tag photo.item.url(:square) %>			
-			<% end -%>
+			<%= link_to image_tag(photo.item.url(:square)), photo, :remote => true %>
 		<% end -%>
 	</div>
-	<div id='preview'>
-		<% photo = @question.photos.first %>
-		<%= image_tag photo.item.url(:large) %>
-		<div class='photo_body' id='<%= photo.id %>'>
-			<%= render :partial => '/partials/show_photo_body', :locals => {:photo => photo} %>
-			<%= render :partial => '/partials/add_photo_body', :locals => {:photo => photo} %>
-		</div>
-	</div>
-	<div id='reply'>
-		<%= render 'partials/comment', :someone => @question %>
+	<div id="preview_page">
 	</div>
 </div>

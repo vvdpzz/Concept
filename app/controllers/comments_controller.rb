@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
   def new
-    @someone = Question.find(params[:question_id])
-    if params[:answer_id]
-      @someone = Answer.find(params[:answer_id])
+    if params[:question_id]
+      @someone = Question.find params[:question_id]
+    else
+      @someone = Photo.find params[:photo_id]
     end
   end
 

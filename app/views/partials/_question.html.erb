@@ -10,11 +10,6 @@
 		<% question.photos.limit(8).each do |photo| %>
 			<%= image_tag photo.item.url(:square) %>
 		<% end -%>
-		<% question.answers.limit(4).each do |answer| %>
-			<% answer.photos.each do |photo| %>
-				<%= image_tag photo.item.url(:square) %>
-			<% end -%>
-		<% end -%>
 	</div>
 	<div class="tags">
 		<% question.tag_list.each do |tag| %>

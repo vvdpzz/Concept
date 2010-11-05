@@ -1,0 +1,6 @@
+<div id="preview">
+	<%= image_tag photo.item.url(:large) %>
+</div>
+<div id="reply">
+	<%= render 'partials/comment', :someone => photo %>
+</div>
