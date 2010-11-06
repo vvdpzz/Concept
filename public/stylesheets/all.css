@@ -47,7 +47,9 @@ a{color:#444;text-decoration:none;}a:hover{color:#08C;text-decoration:none;}
 .vote_number{font-size:3em;color:#888;font-style:bold;margin:5px 0 0;}
 
 .button_to_comment{padding:10px 0 30px;}
-.comment_area{float:left;width:200px;}
+.comment_area{width:100%;}
+.comment_reply{padding:5px 0;}
+#new_comment{padding:10px 0 0;}
 
 .submit{height:34px;padding:0 13px;line-height:36px;position:relative;top:1px;font-family:helvetica,arial,freesans,clean,sans-serif;font-weight:bold;font-size:12px;color:#333;text-shadow:1px 1px 0 #fff;white-space:nowrap;border:none;overflow:visible;background:#ddd;filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff',endColorstr='#e1e1e1');background:-webkit-gradient(linear,0% 0,0% 100%,from(#fff),to(#e1e1e1));background:-moz-linear-gradient(-90deg,#fff,#e1e1e1);border-bottom:1px solid #ebebeb;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 1px 4px rgba(0,0,0,0.3);-moz-box-shadow:0 1px 4px rgba(0,0,0,0.3);box-shadow:0 1px 4px rgba(0,0,0,0.3);cursor:pointer;-webkit-font-smoothing:subpixel-antialiased!important;}
 .submit:hover{color:#fff;text-shadow:-1px -1px 0 rgba(0,0,0,0.3);border-bottom-color:#2E63A5;background:#0770a0;filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#3570B8',endColorstr='#5E9AE2');background: -webkit-gradient(linear, 50% 100%, 50% 0%, from(#3570B8), to(#5E9AE2));background:-moz-linear-gradient(-90deg,#3570B8,#5E9AE2);}

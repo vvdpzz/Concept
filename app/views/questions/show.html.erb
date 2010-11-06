@@ -16,3 +16,13 @@
 	<div id="preview_page">
 	</div>
 </div>
+<%= render :partial => 'upload_js' %>
+<%= form_tag({:controller => 'photos', :action => 'upload'}, :html => { :multipart => true }) do |f| %>
+	<div class='form_ops'>
+		<%= submit_tag 'Upload My Images', :class => 'submit' %>
+		<div class='uploader'>
+		<%= file_field_tag :item, :class => 'item' %>
+		</div>
+	</div>
+<% end %>
+<%= render :partial => '/partials/upload_area' %>
